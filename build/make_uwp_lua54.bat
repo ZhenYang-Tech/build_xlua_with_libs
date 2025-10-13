@@ -13,7 +13,7 @@ md plugin_lua54\Plugins\WSA\x64
 copy /Y build_uwp64_54\Release\xlua.dll plugin_lua54\Plugins\WSA\x64\xlua.dll
 
 mkdir build_uwp_arm_54 & pushd build_uwp_arm_54
-cmake -DLUA_VERSION=5.4.1 -G "Visual Studio 16 2019" -A ARM -DCMAKE_SYSTEM_NAME=WindowsStore -DCMAKE_SYSTEM_VERSION=10.0 ..
+cmake -DLUA_VERSION=5.4.1 -DPBC=ON -G "Visual Studio 16 2019" -A ARM -DCMAKE_SYSTEM_NAME=WindowsStore -DCMAKE_SYSTEM_VERSION=10.0 ..
 popd
 cmake --build build_uwp_arm_54 --config Release
 md plugin_lua54\Plugins\WSA\ARM
