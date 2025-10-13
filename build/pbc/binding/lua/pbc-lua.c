@@ -1,3 +1,10 @@
+#ifdef _WIN32
+#define LUA_EXPORT __declspec(dllexport)
+#else
+#define LUA_EXPORT
+#endif
+
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -1079,7 +1086,7 @@ _add_rmessage(lua_State *L) {
 extern "C" {
 #endif
 
-LUA_API int
+LUA_EXPORT LUA_API int
 luaopen_protobuf_c(lua_State *L) {
 	luaL_Reg reg[] = {
 		{"_env_new" , _env_new },
