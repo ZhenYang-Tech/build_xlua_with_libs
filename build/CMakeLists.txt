@@ -72,7 +72,6 @@ else()
 	set (PBC_SRC 
 		pbc/src/alloc.c
 		pbc/src/array.c
-		pbc/src/array.c
 		pbc/src/bootstrap.c
 		pbc/src/context.c
 		pbc/src/decode.c
@@ -84,12 +83,13 @@ else()
 		pbc/src/stringpool.c
 		pbc/src/varint.c
 		pbc/src/wmessage.c
+		pbc/src/pbc.c
 	)
 
 	if (USING_LUAJIT)
-		list(APPEND PBC_SRC pbc pbc/binding/lua/pbc-lua.c)
+		list(APPEND PBC_SRC pbc/binding/lua/pbc-lua.c)
 	else ()
-		list(APPEND PBC_SRC pbc pbc/binding/lua53/pbc-lua53.c)
+		list(APPEND PBC_SRC pbc/binding/lua53/pbc-lua53.c)
 	endif ()
 
 	set_property(
